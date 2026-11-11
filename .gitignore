@@ -1,10 +1,11 @@
 node_modules/
 *.log
 
-# 비밀키 (절대 올리지 않음)
+# 비밀키 (절대 올리지 않음, 예시 파일은 포함)
 .env
-.env.*
 backend/.env
+!.env.example
+!**/.env.example
 
 # Capacitor / Android
 android/.gradle/
