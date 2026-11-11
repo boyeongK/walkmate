@@ -1,0 +1,15 @@
+node_modules/
+*.log
+
+# 비밀키 (절대 올리지 않음)
+.env
+.env.*
+backend/.env
+
+# Capacitor / Android
+android/.gradle/
+android/app/build/
+android/build/
+android/local.properties
+.capacitor/
+android/.idea/

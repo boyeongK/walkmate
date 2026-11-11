@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">산책메이트</string>
+    <string name="title_activity_main">산책메이트</string>
+    <string name="package_name">com.walkmate.app</string>
+    <string name="custom_url_scheme">com.walkmate.app</string>
+</resources>

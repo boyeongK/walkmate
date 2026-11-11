@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <meta name="theme-color" content="#ff8c42" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-title" content="산책메이트" />
+  <link rel="manifest" href="manifest.json" />
+  <title>산책메이트 - 내 요청 목록</title>
+  <link rel="stylesheet" href="css/common.css" />
+  <link rel="stylesheet" href="css/cancel-dialog.css" />
+  <link rel="stylesheet" href="css/requests.css" />
+</head>
+<body>
+  <div class="app_frame">
+    <header class="app_header">
+      <p class="header_title">산책 약속 목록</p>
+      <p class="header_subtitle">대기·수락 중인 약속만 모아둡니다. 완료 기록은 이력 탭에서 확인하세요.</p>
+    </header>
+
+    <main class="app_main">
+      <section class="request_section">
+        <div class="request_section_header">
+          <h2 class="request_section_title">받은 요청</h2>
+          <span class="request_section_count" data-received-count>0</span>
+        </div>
+        <ul class="request_list" data-received-list></ul>
+      </section>
+
+      <section class="request_section">
+        <div class="request_section_header">
+          <h2 class="request_section_title">보낸 요청</h2>
+          <span class="request_section_count" data-sent-count>0</span>
+        </div>
+        <ul class="request_list" data-sent-list></ul>
+      </section>
+    </main>
+
+    <nav class="bottom_nav">
+      <a class="nav_item" href="home.html"><span class="nav_icon">🏠</span>홈</a>
+      <a class="nav_item" href="matching.html"><span class="nav_icon">💞</span>AI매칭</a>
+      <a class="nav_item is_active" href="requests.html"><span class="nav_icon">📋</span>요청</a>
+      <a class="nav_item" href="history.html"><span class="nav_icon">🕓</span>이력</a>
+      <a class="nav_item" href="profile.html"><span class="nav_icon">🐾</span>프로필</a>
+    </nav>
+  </div>
+
+  <script src="js/app-config.js"></script>
+  <script src="js/local-api.js"></script>
+  <script src="js/api.js"></script>
+  <script src="js/cancel-dialog.js"></script>
+  <script src="js/scroll-top.js"></script>
+  <script src="js/requests.js"></script>
+</body>
+</html>

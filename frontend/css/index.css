@@ -1,0 +1,143 @@
+/* ===== 온보딩 화면 ===== */
+.onboarding_main {
+  flex: 1;
+  min-height: 0;
+  display: flex;
+  flex-direction: column;
+  padding: 60px 24px 40px;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+.onboarding_logo {
+  text-align: center;
+  margin-bottom: 48px;
+}
+
+.onboarding_logo_icon {
+  font-size: 56px;
+}
+
+.onboarding_title {
+  margin-top: 12px;
+  font-size: 26px;
+  font-weight: 800;
+  color: var(--color_primary_dark);
+}
+
+.onboarding_description {
+  margin-top: 12px;
+  font-size: 14px;
+  color: var(--color_text_sub);
+}
+
+.onboarding_account_section {
+  flex: 1;
+}
+
+.onboarding_loading_text {
+  margin: 0 0 24px;
+  text-align: center;
+  font-size: 13px;
+  color: var(--color_text_sub);
+}
+
+.onboarding_block {
+  margin-bottom: 28px;
+}
+
+.onboarding_block .btn_primary {
+  width: 100%;
+}
+
+.onboarding_demo_details {
+  margin-top: 8px;
+  padding: 14px 16px;
+  border-radius: var(--radius_card);
+  background-color: var(--color_surface);
+  border: 1px solid var(--color_border);
+}
+
+.onboarding_demo_summary {
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--color_text_sub);
+  cursor: pointer;
+  list-style: none;
+}
+
+.onboarding_demo_summary::-webkit-details-marker {
+  display: none;
+}
+
+.onboarding_demo_details[open] .onboarding_demo_summary {
+  margin-bottom: 10px;
+  color: var(--color_primary_dark);
+}
+
+.account_select_list {
+  margin-top: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.account_select_item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 14px 16px;
+  border-radius: var(--radius_card);
+  background-color: var(--color_surface);
+  box-shadow: var(--shadow_card);
+  width: 100%;
+  text-align: left;
+}
+
+.account_select_item .account_avatar {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background-color: #fff1e4;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 20px;
+  flex-shrink: 0;
+}
+
+.account_select_item .account_info {
+  flex: 1;
+}
+
+.account_select_item .account_name {
+  font-weight: 700;
+  font-size: 15px;
+}
+
+.account_select_item .account_region {
+  margin-top: 2px;
+  font-size: 12px;
+  color: var(--color_text_sub);
+}
+
+.onboarding_divider {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin: 24px 0 16px;
+  color: var(--color_text_sub);
+  font-size: 12px;
+}
+
+.onboarding_divider::before,
+.onboarding_divider::after {
+  content: '';
+  flex: 1;
+  height: 1px;
+  background-color: var(--color_border);
+}
+
+.new_account_form .form_group:last-of-type {
+  margin-bottom: 12px;
+}

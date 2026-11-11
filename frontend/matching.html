@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <meta name="theme-color" content="#ff8c42" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-title" content="산책메이트" />
+  <link rel="manifest" href="manifest.json" />
+  <title>산책메이트 - AI 매칭 측정</title>
+  <link rel="stylesheet" href="css/common.css" />
+  <link rel="stylesheet" href="css/home.css" />
+  <link rel="stylesheet" href="css/matching.css" />
+</head>
+<body>
+  <div class="app_frame">
+    <header class="app_header">
+      <p class="header_title">AI 매칭 측정</p>
+      <p class="header_subtitle">내 반려동물 정보로 AI가 궁합 점수를 직접 계산해드려요.</p>
+    </header>
+
+    <main class="app_main">
+      <section class="card my_pet_summary" data-my-pet-summary hidden></section>
+
+      <section class="pet_switcher_bar" data-pet-switcher hidden></section>
+
+      <div class="matching_action" data-matching-idle>
+        <p class="matching_action_desc">버튼을 누르면 AI가 동네에 등록된 다른 반려동물들과 우리 아이의 궁합을 하나씩 분석해요.</p>
+        <button type="button" class="btn_primary" data-run-matching-button>🔍 AI 매칭 측정 시작하기</button>
+      </div>
+
+      <div class="matching_loading" data-matching-loading hidden>
+        <div class="matching_spinner" aria-hidden="true"></div>
+        <p class="matching_loading_text">AI가 궁합을 분석하고 있어요...</p>
+      </div>
+
+      <div class="matching_result" data-matching-result hidden>
+        <h2 class="section_title matching_result_title">측정 결과</h2>
+        <div class="matching_retry_box">
+          <p class="matching_retry_desc">궁합 점수를 새로 계산해볼 수 있어요.</p>
+          <button type="button" class="matching_retry_button" data-run-matching-button>🔄 다시 측정하기</button>
+        </div>
+        <ul class="match_list" data-match-list></ul>
+      </div>
+    </main>
+
+    <nav class="bottom_nav">
+      <a class="nav_item" href="home.html"><span class="nav_icon">🏠</span>홈</a>
+      <a class="nav_item is_active" href="matching.html"><span class="nav_icon">💞</span>AI매칭</a>
+      <a class="nav_item" href="requests.html"><span class="nav_icon">📋</span>요청</a>
+      <a class="nav_item" href="history.html"><span class="nav_icon">🕓</span>이력</a>
+      <a class="nav_item" href="profile.html"><span class="nav_icon">🐾</span>프로필</a>
+    </nav>
+  </div>
+
+  <script src="js/app-config.js"></script>
+  <script src="js/local-api.js"></script>
+  <script src="js/pet-ui.js"></script>
+  <script src="js/match-explainer.js"></script>
+  <script src="js/api.js"></script>
+  <script src="js/scroll-top.js"></script>
+  <script src="js/matching.js"></script>
+</body>
+</html>

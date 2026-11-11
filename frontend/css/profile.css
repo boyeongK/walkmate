@@ -1,0 +1,174 @@
+/* ===== 반려동물 프로필 등록 화면 ===== */
+.profile_form {
+  margin-top: 8px;
+}
+
+.profile_delete_pet_button {
+  margin-bottom: 10px;
+  color: var(--color_danger);
+  border-color: #f4b4b0;
+}
+
+.profile_form .btn_primary {
+  margin-top: 8px;
+}
+
+.profile_photo_group {
+  margin-bottom: 8px;
+}
+
+.profile_photo_row {
+  display: flex;
+  justify-content: center;
+  padding: 8px 0 4px;
+}
+
+.profile_photo_wrap {
+  position: relative;
+  width: 112px;
+  height: 112px;
+}
+
+.profile_photo_preview {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  background-color: #fff1e4;
+  border: 2px solid var(--color_border);
+  overflow: hidden;
+}
+
+.profile_photo_placeholder,
+.profile_photo_image {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+}
+
+/* hidden 속성은 class display 지정과 우선순위가 같아서, 숨김 처리를 명시해야 함 */
+.profile_photo_placeholder[hidden],
+.profile_photo_image[hidden],
+.profile_photo_menu[hidden],
+.profile_photo_menu_item[hidden] {
+  display: none !important;
+}
+
+.profile_photo_image:not([hidden]) {
+  object-fit: cover;
+  display: block;
+}
+
+.profile_photo_placeholder:not([hidden]) {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 42px;
+}
+
+/* 프로필 사진 우하단 설정(톱니) 버튼 */
+.profile_photo_edit_button {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  z-index: 2;
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  background-color: #ffffff;
+  border: 1px solid var(--color_border);
+  color: #6b6b6b;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.12);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.profile_photo_edit_button:active {
+  background-color: #fafafa;
+}
+
+.profile_photo_edit_icon {
+  width: 18px;
+  height: 18px;
+}
+
+/* 설정 버튼 눌렀을 때 나오는 메뉴 */
+.profile_photo_menu {
+  position: absolute;
+  right: 0;
+  bottom: 42px;
+  z-index: 3;
+  min-width: 148px;
+  padding: 6px;
+  border-radius: 12px;
+  background-color: var(--color_surface);
+  border: 1px solid var(--color_border);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+}
+
+.profile_photo_menu_item {
+  display: block;
+  width: 100%;
+  padding: 10px 12px;
+  border-radius: 8px;
+  text-align: left;
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--color_text);
+  background-color: transparent;
+}
+
+.profile_photo_menu_item:active {
+  background-color: #f7f3ee;
+}
+
+.profile_photo_menu_item_danger {
+  color: var(--color_danger);
+}
+
+.custom_tag_input_row {
+  display: flex;
+  gap: 8px;
+  margin-top: 10px;
+}
+
+.custom_tag_input_row .form_input {
+  flex: 1;
+}
+
+.custom_tag_input_row .btn_outline {
+  flex-shrink: 0;
+}
+
+/* 직접 입력해서 추가한 태그는 삭제(×) 버튼을 함께 보여줌 */
+.chip_select_option.is_custom_tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.chip_remove {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  font-size: 13px;
+  line-height: 1;
+  background-color: rgba(0, 0, 0, 0.08);
+  color: var(--color_text_sub);
+  flex-shrink: 0;
+}
+
+.chip_select_option.is_selected .chip_remove {
+  background-color: #ffffff;
+  color: var(--color_primary_dark);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+}
+
+.chip_remove:active {
+  opacity: 0.85;
+}

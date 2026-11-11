@@ -1,0 +1,563 @@
+/* ===== 공통 초기화 및 변수 ===== */
+:root {
+  --color_primary: #ff8c42;
+  --color_primary_dark: #e6702a;
+  --color_secondary: #2ec4b6;
+  --color_background: #fff8f0;
+  --color_surface: #ffffff;
+  --color_text: #2b2b2b;
+  --color_text_sub: #8a8a8a;
+  --color_border: #f0e4d8;
+  --color_danger: #e74c3c;
+  --color_success: #2ecc71;
+  --radius_card: 16px;
+  --radius_button: 12px;
+  --shadow_card: 0 4px 12px rgba(0, 0, 0, 0.06);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  height: 100%;
+  overflow: hidden;
+  font-family: "Apple SD Gothic Neo", "Malgun Gothic", "Noto Sans KR", sans-serif;
+  background-color: #ebe3d8;
+  color: var(--color_text);
+  font-size: 15px;
+  line-height: 1.5;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+button {
+  font-family: inherit;
+  cursor: pointer;
+  border: none;
+}
+
+ul,
+ol {
+  list-style: none;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+/* ===== 모바일 앱 프레임 ===== */
+/* 실제 앱처럼 프레임 자체는 화면 높이에 고정하고, 내용(app_main)만 그 안에서 스크롤되도록 구성 */
+.app_frame {
+  max-width: 420px;
+  height: 100vh;
+  margin: 0 auto;
+  background-color: var(--color_background);
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.app_header {
+  flex-shrink: 0;
+  padding: 20px 20px 12px;
+  background-color: var(--color_background);
+}
+
+.app_header .header_title {
+  font-size: 20px;
+  font-weight: 700;
+}
+
+.app_header .header_subtitle {
+  margin-top: 4px;
+  font-size: 13px;
+  color: var(--color_text_sub);
+}
+
+.app_main {
+  flex: 1;
+  min-height: 0;
+  padding: 4px 20px 24px;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+/* 맨 위로 이동 버튼 (전 페이지 공통) */
+.scroll_top_button {
+  position: absolute;
+  right: 16px;
+  bottom: 20px;
+  z-index: 1200;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: #ffffff;
+  background-color: var(--color_primary);
+  box-shadow: 0 4px 14px rgba(255, 140, 66, 0.35);
+  transition: opacity 0.2s ease, transform 0.2s ease;
+}
+
+.scroll_top_button[hidden] {
+  display: none !important;
+}
+
+.scroll_top_button:active {
+  transform: scale(0.96);
+  opacity: 0.92;
+}
+
+.scroll_top_icon {
+  width: 20px;
+  height: 20px;
+}
+
+/* ===== 하단 내비게이션 ===== */
+.bottom_nav {
+  flex-shrink: 0;
+  display: flex;
+  background-color: var(--color_surface);
+  border-top: 1px solid var(--color_border);
+  padding: 8px 0 max(8px, env(safe-area-inset-bottom));
+}
+
+.nav_item {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2px;
+  padding: 6px 0;
+  font-size: 12px;
+  color: var(--color_text_sub);
+}
+
+.nav_item .nav_icon {
+  font-size: 20px;
+}
+
+.nav_item.is_active {
+  color: var(--color_primary_dark);
+  font-weight: 700;
+}
+
+/* ===== 버튼 ===== */
+.btn_primary,
+.btn_outline,
+.btn_text {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  padding: 14px 16px;
+  border-radius: var(--radius_button);
+  font-size: 15px;
+  font-weight: 700;
+  transition: opacity 0.15s ease;
+}
+
+.btn_primary {
+  background-color: var(--color_primary);
+  color: #ffffff;
+}
+
+.btn_primary:disabled {
+  background-color: #d8c6b5;
+  cursor: not-allowed;
+}
+
+.btn_primary:active {
+  opacity: 0.85;
+}
+
+.btn_outline {
+  background-color: transparent;
+  border: 1.5px solid var(--color_primary);
+  color: var(--color_primary_dark);
+}
+
+.btn_text {
+  background-color: transparent;
+  color: var(--color_text_sub);
+  font-weight: 500;
+  text-decoration: underline;
+}
+
+.btn_danger_outline {
+  border: 1.5px solid var(--color_danger);
+  color: var(--color_danger);
+  background-color: transparent;
+}
+
+.btn_small {
+  width: auto;
+  padding: 8px 14px;
+  font-size: 13px;
+  border-radius: 999px;
+}
+
+.button_row {
+  display: flex;
+  gap: 8px;
+}
+
+/* ===== 카드 ===== */
+.card {
+  background-color: var(--color_surface);
+  border-radius: var(--radius_card);
+  box-shadow: var(--shadow_card);
+  padding: 16px;
+}
+
+/* ===== 뱃지/태그 ===== */
+.tag_chip {
+  display: inline-flex;
+  align-items: center;
+  padding: 5px 10px;
+  border-radius: 999px;
+  background-color: #fff1e4;
+  color: var(--color_primary_dark);
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.score_badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 4px 10px;
+  border-radius: 999px;
+  background-color: #e9f9f0;
+  color: #1f9d5c;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.status_badge {
+  display: inline-flex;
+  padding: 4px 10px;
+  border-radius: 999px;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.status_badge.status_pending {
+  background-color: #fff4d6;
+  color: #b8860b;
+}
+
+.status_badge.status_accepted {
+  background-color: #e5f2ff;
+  color: #1a73c7;
+}
+
+.status_badge.status_completed {
+  background-color: #e9f9f0;
+  color: #1f9d5c;
+}
+
+.status_badge.status_rejected,
+.status_badge.status_cancelled {
+  background-color: #fdecea;
+  color: var(--color_danger);
+}
+
+/* 프로필 사진이 있는 아바타 */
+img.pet_avatar_photo {
+  object-fit: cover;
+}
+
+.my_pet_avatar.pet_avatar_photo,
+.match_card_avatar.pet_avatar_photo {
+  display: block;
+}
+
+/* 사진 없을 때 공통 강아지 이모티콘 플레이스홀더 */
+.pet_avatar_placeholder {
+  background-color: #fff1e4;
+}
+
+.match_card_avatar.pet_avatar_placeholder {
+  background-color: #eef7f5;
+}
+
+/* ===== 반려동물 전환 바 (홈·프로필·AI매칭 공통) ===== */
+.pet_switcher_bar,
+.profile_pet_switcher_card {
+  margin-bottom: 12px;
+}
+
+.pet_switcher_label {
+  margin-bottom: 10px;
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--color_text_sub);
+}
+
+.pet_switcher_list {
+  display: flex;
+  gap: 10px;
+  overflow-x: auto;
+  padding-bottom: 4px;
+  -webkit-overflow-scrolling: touch;
+}
+
+.pet_switcher_item {
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  width: 72px;
+  padding: 8px 6px;
+  border-radius: 14px;
+  border: 1.5px solid var(--color_border);
+  background-color: var(--color_surface);
+  color: var(--color_text);
+  text-decoration: none;
+}
+
+.pet_switcher_item.is_active {
+  border-color: var(--color_primary);
+  background-color: var(--color_surface);
+}
+
+.pet_switcher_avatar {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  font-size: 20px;
+  flex-shrink: 0;
+}
+
+.pet_switcher_avatar.pet_avatar_placeholder {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  line-height: 1;
+}
+
+.pet_switcher_avatar.pet_avatar_photo {
+  display: block;
+  object-fit: cover;
+}
+
+.pet_switcher_name {
+  max-width: 100%;
+  font-size: 12px;
+  font-weight: 700;
+  text-align: center;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.pet_switcher_add {
+  border-style: dashed;
+  color: var(--color_primary_dark);
+}
+
+.pet_switcher_add_icon {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #fff1e4;
+  flex-shrink: 0;
+}
+
+.pet_switcher_add_svg {
+  display: block;
+  width: 20px;
+  height: 20px;
+  max-width: 20px;
+  max-height: 20px;
+  flex-shrink: 0;
+  color: var(--color_primary_dark);
+}
+
+/* ===== 폼 요소 ===== */
+.form_group {
+  margin-bottom: 18px;
+}
+
+.form_label {
+  display: block;
+  margin-bottom: 8px;
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.form_input,
+.form_select,
+.form_textarea {
+  width: 100%;
+  padding: 12px 14px;
+  border: 1.5px solid var(--color_border);
+  border-radius: var(--radius_button);
+  font-size: 15px;
+  background-color: var(--color_surface);
+  color: var(--color_text);
+}
+
+.form_textarea {
+  min-height: 90px;
+  resize: vertical;
+}
+
+.form_helper {
+  margin-top: 6px;
+  font-size: 12px;
+  color: var(--color_text_sub);
+}
+
+.form_error {
+  margin-top: 6px;
+  font-size: 12px;
+  color: var(--color_danger);
+}
+
+.chip_select_group {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.chip_select_option {
+  padding: 8px 14px;
+  border-radius: 999px;
+  border: 1.5px solid var(--color_border);
+  background-color: var(--color_surface);
+  font-size: 13px;
+  color: var(--color_text_sub);
+}
+
+.chip_select_option.is_selected {
+  border-color: var(--color_primary);
+  background-color: #fff1e4;
+  color: var(--color_primary_dark);
+  font-weight: 700;
+}
+
+/* ===== 안내 문구/빈 상태 ===== */
+.empty_state {
+  text-align: center;
+  padding: 60px 20px;
+  color: var(--color_text_sub);
+}
+
+.empty_state .empty_state_icon {
+  font-size: 40px;
+  margin-bottom: 12px;
+}
+
+.section_title {
+  font-size: 16px;
+  font-weight: 700;
+  margin: 20px 0 12px;
+}
+
+.section_title:first-child {
+  margin-top: 4px;
+}
+
+.toast_message {
+  position: fixed;
+  left: 50%;
+  bottom: 90px;
+  transform: translateX(-50%);
+  background-color: #2b2b2b;
+  color: #ffffff;
+  padding: 10px 18px;
+  border-radius: 999px;
+  font-size: 13px;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.2s ease;
+  z-index: 100;
+  white-space: nowrap;
+}
+
+.toast_message.is_visible {
+  opacity: 1;
+}
+
+/* 웹캠 촬영 / 프로필 사진 선택 모달 (전역) */
+.walk_camera_modal {
+  position: fixed;
+  inset: 0;
+  z-index: 3000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 16px;
+  background-color: rgba(0, 0, 0, 0.65);
+}
+
+.walk_camera_modal[hidden] {
+  display: none !important;
+}
+
+.walk_camera_modal_panel {
+  width: min(100%, 420px);
+  padding: 16px;
+  border-radius: 16px;
+  background-color: var(--color_surface);
+  box-shadow: var(--shadow_card);
+}
+
+.walk_camera_modal_title {
+  margin-bottom: 12px;
+  font-size: 16px;
+  font-weight: 700;
+}
+
+.walk_camera_modal_desc {
+  margin-bottom: 14px;
+  font-size: 13px;
+  color: var(--color_text_sub);
+  line-height: 1.5;
+}
+
+.walk_camera_preview {
+  display: block;
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  border-radius: 12px;
+  background-color: #111;
+}
+
+.walk_camera_actions {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-top: 12px;
+}
+
+.walk_camera_actions_row {
+  display: flex;
+  gap: 8px;
+}
+
+.walk_camera_actions .btn_primary,
+.walk_camera_actions .btn_outline {
+  flex: 1;
+}
+
+.walk_camera_actions .btn_full {
+  width: 100%;
+}

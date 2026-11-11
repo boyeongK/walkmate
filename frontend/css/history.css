@@ -1,0 +1,102 @@
+/* ===== 산책 이력 화면 ===== */
+.history_list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.history_card {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.history_card_top {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 8px;
+}
+
+.history_card_title {
+  font-weight: 700;
+  font-size: 15px;
+}
+
+.history_card_badges {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 6px;
+  flex-shrink: 0;
+}
+
+.history_block_badge {
+  display: inline-flex;
+  align-items: center;
+  padding: 4px 8px;
+  border-radius: 999px;
+  font-size: 11px;
+  font-weight: 700;
+  color: var(--color_danger);
+  background-color: #fff0f0;
+}
+
+.history_card_meta {
+  font-size: 13px;
+  color: var(--color_text_sub);
+}
+
+.history_card_review {
+  font-size: 13px;
+  background-color: #fff8f0;
+  border-radius: 10px;
+  padding: 8px 12px;
+}
+
+.history_card_actions {
+  margin-top: 4px;
+}
+
+.history_block_btn,
+.history_unblock_btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  padding: 12px 16px;
+  border: none;
+  border-radius: var(--radius_button);
+  font-size: 14px;
+  font-weight: 700;
+  transition: opacity 0.15s ease;
+}
+
+.history_block_btn {
+  color: #ffffff;
+  background-color: var(--color_danger);
+}
+
+.history_block_btn:active {
+  opacity: 0.85;
+}
+
+.history_block_btn:disabled {
+  opacity: 0.55;
+  cursor: not-allowed;
+}
+
+.history_unblock_btn {
+  color: var(--color_text_sub);
+  background-color: #f2f2f2;
+}
+
+.history_unblock_btn:active {
+  opacity: 0.85;
+}
+
+.history_unblock_btn:disabled {
+  opacity: 0.55;
+  cursor: not-allowed;
+}

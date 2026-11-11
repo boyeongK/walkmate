@@ -1,0 +1,11 @@
+{
+  "appId": "com.walkmate.app",
+  "appName": "산책메이트",
+  "webDir": "frontend",
+  "server": {
+    "androidScheme": "http"
+  },
+  "android": {
+    "allowMixedContent": true
+  }
+}

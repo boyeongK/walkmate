@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <meta name="theme-color" content="#ff8c42" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-title" content="산책메이트" />
+  <link rel="manifest" href="manifest.json" />
+  <title>산책메이트 - 산책 요청</title>
+  <link rel="stylesheet" href="css/common.css" />
+  <link rel="stylesheet" href="css/request.css" />
+</head>
+<body>
+  <div class="app_frame">
+    <header class="app_header">
+      <a class="btn_text btn_small" href="home.html">← 돌아가기</a>
+      <p class="header_title">산책 요청 보내기</p>
+      <p class="header_subtitle">자유 채팅 없이, 정해진 옵션만 선택해서 간단히 제안해요.</p>
+    </header>
+
+    <main class="app_main">
+      <section class="card target_pet_summary" data-target-summary>
+        <p>불러오는 중...</p>
+      </section>
+
+      <form class="card request_form" data-request-form>
+        <div class="form_group">
+          <label class="form_label">언제 산책할까요?</label>
+          <div class="chip_select_group" data-time-group>
+            <button type="button" class="chip_select_option" data-time="오늘 오전 9시">오늘 오전 9시</button>
+            <button type="button" class="chip_select_option" data-time="오늘 저녁 7시">오늘 저녁 7시</button>
+            <button type="button" class="chip_select_option" data-time="내일 오전 9시">내일 오전 9시</button>
+            <button type="button" class="chip_select_option" data-time="내일 저녁 7시">내일 저녁 7시</button>
+          </div>
+        </div>
+
+        <div class="form_group">
+          <label class="form_label">어디서 만날까요?</label>
+          <div class="chip_select_group" data-place-group>
+            <button type="button" class="chip_select_option" data-place="동네 놀이터">동네 놀이터</button>
+            <button type="button" class="chip_select_option" data-place="OO공원 입구">OO공원 입구</button>
+            <button type="button" class="chip_select_option" data-place="OO천 산책로">OO천 산책로</button>
+          </div>
+        </div>
+
+        <p class="form_error" data-error-message hidden></p>
+
+        <button type="submit" class="btn_primary">요청 보내기</button>
+      </form>
+    </main>
+  </div>
+
+  <script src="js/app-config.js"></script>
+  <script src="js/local-api.js"></script>
+  <script src="js/pet-ui.js"></script>
+  <script src="js/api.js"></script>
+  <script src="js/scroll-top.js"></script>
+  <script src="js/request.js"></script>
+</body>
+</html>

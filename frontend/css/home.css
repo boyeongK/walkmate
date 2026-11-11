@@ -1,0 +1,163 @@
+/* ===== 홈(매칭 추천) 화면 ===== */
+.home_header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.my_pet_summary {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-bottom: 12px;
+}
+
+.my_pet_summary_top {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.my_pet_summary_avatar {
+  flex-shrink: 0;
+}
+
+.my_pet_avatar {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background-color: #fff1e4;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 26px;
+  flex-shrink: 0;
+}
+
+.my_pet_avatar.pet_avatar_photo {
+  display: block;
+  object-fit: cover;
+}
+
+.my_pet_info {
+  flex: 1;
+  min-width: 0;
+}
+
+.my_pet_name {
+  font-weight: 700;
+  font-size: 16px;
+}
+
+.my_pet_breed {
+  margin-top: 2px;
+  font-size: 13px;
+  color: var(--color_text_sub);
+}
+
+.my_pet_edit_link {
+  flex-shrink: 0;
+  width: auto;
+  padding: 6px 12px;
+  font-size: 12px;
+}
+
+.my_pet_summary_meta,
+.my_pet_summary_tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.my_pet_summary_meta {
+  padding-top: 12px;
+  border-top: 1px solid var(--color_border);
+}
+
+.tag_chip_meta {
+  background-color: #eef7f5;
+  color: #1a8a7d;
+}
+
+.tag_chip_more {
+  background-color: #f5f0ea;
+  color: var(--color_text_sub);
+}
+
+.match_list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.match_card {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.match_card_top {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.match_card_avatar {
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  background-color: #eef7f5;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 24px;
+  flex-shrink: 0;
+}
+
+.match_card_info {
+  flex: 1;
+}
+
+.match_card_name {
+  font-weight: 700;
+  font-size: 15px;
+}
+
+.match_card_meta {
+  margin-top: 2px;
+  font-size: 12px;
+  color: var(--color_text_sub);
+}
+
+.match_card_tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+/* LLM / fallback 궁합 설명 */
+.match_llm_explanation {
+  margin-top: 10px;
+  padding: 10px 12px;
+  border-radius: 10px;
+  background: linear-gradient(135deg, #f8f4ff 0%, #faf8ff 100%);
+  border-left: 3px solid #7c5cbf;
+}
+
+.match_llm_explanation_label {
+  display: inline-block;
+  margin-bottom: 4px;
+  font-size: 10px;
+  font-weight: 700;
+  color: #7c5cbf;
+  letter-spacing: 0.03em;
+}
+
+.match_llm_explanation_text {
+  margin: 0;
+  font-size: 12px;
+  line-height: 1.55;
+  color: var(--color_text);
+  word-break: keep-all;
+}

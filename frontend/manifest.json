@@ -1,0 +1,10 @@
+{
+  "name": "산책메이트",
+  "short_name": "산책메이트",
+  "description": "AI가 궁합 좋은 반려동물 산책 짝을 추천해드려요.",
+  "start_url": "/index.html",
+  "display": "standalone",
+  "background_color": "#fff8f0",
+  "theme_color": "#ff8c42",
+  "lang": "ko"
+}

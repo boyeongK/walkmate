@@ -1,0 +1,109 @@
+/* ===== 요청 목록 화면 ===== */
+.request_section {
+  margin-bottom: 24px;
+}
+
+.request_section:last-child {
+  margin-bottom: 0;
+}
+
+.request_section_header {
+  display: flex;
+  align-items: baseline;
+  gap: 6px;
+  margin-bottom: 10px;
+}
+
+.request_section_title {
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--color_text);
+}
+
+.request_section_count {
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--color_primary);
+}
+
+.request_list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.request_empty_state {
+  padding: 28px 16px;
+}
+
+.request_card {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.request_card_top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+}
+
+.request_card_title {
+  font-weight: 700;
+  font-size: 15px;
+}
+
+.request_card_meta {
+  font-size: 13px;
+  color: var(--color_text_sub);
+}
+
+.request_card_actions {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.request_action_primary,
+.request_action_danger {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  padding: 12px 16px;
+  border: none;
+  border-radius: var(--radius_button);
+  font-size: 14px;
+  font-weight: 700;
+  text-decoration: none;
+  transition: opacity 0.15s ease;
+}
+
+.request_action_primary {
+  color: #ffffff;
+  background-color: var(--color_primary);
+}
+
+.request_action_primary:active {
+  opacity: 0.85;
+}
+
+.request_action_primary:disabled {
+  opacity: 0.55;
+  cursor: not-allowed;
+}
+
+.request_action_danger {
+  color: #ffffff;
+  background-color: var(--color_danger);
+}
+
+.request_action_danger:active {
+  opacity: 0.85;
+}
+
+.request_action_danger:disabled {
+  opacity: 0.55;
+  cursor: not-allowed;
+}

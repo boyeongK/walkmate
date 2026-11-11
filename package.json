@@ -1,0 +1,23 @@
+{
+  "name": "walkmate-app",
+  "version": "1.0.0",
+  "description": "산책메이트 Capacitor Android 앱",
+  "private": true,
+  "scripts": {
+    "setup": "npm install && npm install --prefix backend",
+    "dev": "npm run dev --prefix backend",
+    "start": "npm start --prefix backend",
+    "cap:sync": "npx cap sync android",
+    "cap:open": "npx cap open android",
+    "cap:build": "npx cap sync android && npx cap open android",
+    "apk:build": "powershell -ExecutionPolicy Bypass -File scripts/build-apk.ps1"
+  },
+  "dependencies": {
+    "@capacitor/android": "^7.2.0",
+    "@capacitor/camera": "^7.0.5",
+    "@capacitor/core": "^7.2.0"
+  },
+  "devDependencies": {
+    "@capacitor/cli": "^7.2.0"
+  }
+}

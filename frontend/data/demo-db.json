@@ -1,0 +1,418 @@
+{
+  "users": [
+    {
+      "id": "u1",
+      "name": "김지수",
+      "phone": "010-1234-5678",
+      "region": "서울 마포구",
+      "verified": true
+    },
+    {
+      "id": "u2",
+      "name": "박서준",
+      "phone": "010-2222-3333",
+      "region": "서울 마포구",
+      "verified": true
+    },
+    {
+      "id": "u3",
+      "name": "이하늘",
+      "phone": "010-4444-5555",
+      "region": "서울 마포구",
+      "verified": true
+    },
+    {
+      "id": "u1786490850917",
+      "name": "배밍구",
+      "phone": "",
+      "region": "서울 성북구",
+      "verified": true
+    }
+  ],
+  "pets": [
+    {
+      "id": "p1",
+      "userId": "u1",
+      "name": "몽이",
+      "breed": "말티즈",
+      "age": 3,
+      "size": "소형",
+      "energyLevel": "중간",
+      "tags": ["활발함", "사람좋아함", "소형견선호"]
+    },
+    {
+      "id": "p1b",
+      "userId": "u1",
+      "name": "뭉치",
+      "breed": "시츄",
+      "age": 5,
+      "size": "소형",
+      "energyLevel": "낮음",
+      "tags": ["온순함", "짧은산책선호", "겁많음"]
+    },
+    {
+      "id": "p2",
+      "userId": "u2",
+      "name": "코코",
+      "breed": "푸들",
+      "age": 2,
+      "size": "소형",
+      "energyLevel": "높음",
+      "tags": ["활발함", "사람좋아함", "장난기많음"]
+    },
+    {
+      "id": "p3",
+      "userId": "u3",
+      "name": "보리",
+      "breed": "골든리트리버",
+      "age": 4,
+      "size": "대형",
+      "energyLevel": "높음",
+      "tags": ["온순함", "대형견선호", "장거리산책"]
+    },
+    {
+      "id": "p1786490865258",
+      "userId": "u1786490850917",
+      "name": "몽이",
+      "breed": "말티즈",
+      "age": 3,
+      "size": "대형",
+      "energyLevel": "중간",
+      "tags": ["장거리산책"]
+    }
+  ],
+  "requests": [
+    {
+      "id": "r_demo_pending_u1",
+      "fromUserId": "u2",
+      "toUserId": "u1",
+      "fromPetId": "p2",
+      "toPetId": "p1",
+      "timeSlot": "이번 주 토요일 오후 3시",
+      "place": "망원한강공원 벤치 앞",
+      "status": "pending",
+      "walkPhase": "not_started",
+      "statusLog": [],
+      "review": null,
+      "createdAt": 1787900000000
+    },
+    {
+      "id": "r_demo_pending_cancel_u1",
+      "fromUserId": "u1",
+      "toUserId": "u3",
+      "fromPetId": "p1",
+      "toPetId": "p3",
+      "timeSlot": "내일 오후 5시",
+      "place": "마포구 운동장 옆 산책로",
+      "status": "pending",
+      "walkPhase": "not_started",
+      "statusLog": [],
+      "review": null,
+      "createdAt": 1787898000000
+    },
+    {
+      "id": "r_active_003",
+      "fromUserId": "u3",
+      "toUserId": "u1",
+      "fromPetId": "p3",
+      "toPetId": "p1",
+      "timeSlot": "오늘 저녁 7시",
+      "place": "경의선숲길 입구",
+      "status": "accepted",
+      "walkPhase": "not_started",
+      "statusLog": [],
+      "review": null,
+      "createdAt": 1787820000000
+    },
+    {
+      "id": "r_active_004",
+      "fromUserId": "u2",
+      "toUserId": "u1786490850917",
+      "fromPetId": "p2",
+      "toPetId": "p1786490865258",
+      "timeSlot": "지난주 일요일 오전 11시",
+      "place": "성북동 카페거리 앞",
+      "status": "rejected",
+      "walkPhase": "not_started",
+      "statusLog": [],
+      "review": null,
+      "createdAt": 1787700000000
+    },
+    {
+      "id": "r1787717558798",
+      "fromUserId": "u3",
+      "toUserId": "u2",
+      "timeSlot": "오늘 오전 9시",
+      "place": "합정 메인골목 공원",
+      "status": "pending",
+      "walkPhase": "not_started",
+      "statusLog": [],
+      "review": null,
+      "createdAt": 1787717558798
+    },
+    {
+      "id": "r_active_006",
+      "fromUserId": "u2",
+      "toUserId": "u3",
+      "timeSlot": "오늘 오후 2시",
+      "place": "월드컵공원 잔디광장",
+      "status": "accepted",
+      "walkPhase": "started",
+      "statusLog": [
+        {
+          "message": "도착했어요",
+          "by": "u2",
+          "timestamp": 1787880000000
+        }
+      ],
+      "review": null,
+      "createdAt": 1787870000000
+    },
+    {
+      "id": "r_active_007",
+      "fromUserId": "u1786490850917",
+      "toUserId": "u2",
+      "timeSlot": "어제 오후 4시",
+      "place": "망원나들목 버스정류장",
+      "status": "cancelled",
+      "walkPhase": "not_started",
+      "statusLog": [
+        {
+          "message": "취소할게요",
+          "cancelReason": "일정이 갑자기 바뀌었어요",
+          "cancelNote": "다음에 다시 만나요",
+          "by": "u1786490850917",
+          "timestamp": 1787750000000
+        }
+      ],
+      "cancelInfo": {
+        "reason": "일정이 갑자기 바뀌었어요",
+        "note": "다음에 다시 만나요",
+        "cancelledBy": "u1786490850917",
+        "timestamp": 1787750000000
+      },
+      "review": null,
+      "createdAt": 1787740000000
+    },
+    {
+      "id": "r_active_008",
+      "fromUserId": "u2",
+      "toUserId": "u3",
+      "timeSlot": "지난주 금요일 오후 6시",
+      "place": "상암 DMC 공원",
+      "status": "rejected",
+      "walkPhase": "not_started",
+      "statusLog": [],
+      "review": null,
+      "createdAt": 1787650000000
+    },
+    {
+      "id": "r_active_009",
+      "fromUserId": "u1786490850917",
+      "toUserId": "u1",
+      "timeSlot": "이번 주 일요일 오전 10시",
+      "place": "북촌 한옥마을 산책로",
+      "status": "cancelled",
+      "walkPhase": "not_started",
+      "statusLog": [],
+      "review": null,
+      "createdAt": 1787810000000
+    },
+    {
+      "id": "r_active_010",
+      "fromUserId": "u3",
+      "toUserId": "u1786490850917",
+      "timeSlot": "내일 오전 8시",
+      "place": "성북천 벚꽃길",
+      "status": "pending",
+      "walkPhase": "not_started",
+      "statusLog": [],
+      "review": null,
+      "createdAt": 1787830000000
+    },
+    {
+      "id": "r_active_011",
+      "fromUserId": "u1786490850917",
+      "toUserId": "u3",
+      "timeSlot": "오늘 오후 1시",
+      "place": "안국역 3번 출구",
+      "status": "accepted",
+      "walkPhase": "not_started",
+      "statusLog": [],
+      "review": null,
+      "createdAt": 1787860000000
+    },
+    {
+      "id": "r_hist_001",
+      "fromUserId": "u1786490850917",
+      "toUserId": "u3",
+      "timeSlot": "지난주 토요일 오전 10시",
+      "place": "성북천 산책로",
+      "status": "completed",
+      "walkPhase": "ended",
+      "statusLog": [
+        {
+          "message": "도착했어요",
+          "by": "u1786490850917",
+          "timestamp": 1787200000000
+        }
+      ],
+      "review": {
+        "rating": 5,
+        "comment": "보리가 온순해서 우리 몽이랑 잘 맞았어요. 다음에 또 같이 걷고 싶어요.",
+        "reviewedBy": "u1786490850917",
+        "timestamp": 1787203600000
+      },
+      "createdAt": 1787100000000
+    },
+    {
+      "id": "r_hist_002",
+      "fromUserId": "u1",
+      "toUserId": "u1786490850917",
+      "timeSlot": "지난주 수요일 저녁 7시",
+      "place": "동네 놀이터",
+      "status": "completed",
+      "walkPhase": "ended",
+      "statusLog": [
+        {
+          "message": "도착했어요",
+          "by": "u1",
+          "timestamp": 1786900000000
+        }
+      ],
+      "review": {
+        "rating": 4,
+        "comment": "짧은 산책이었지만 서로 잘 어울렸어요.",
+        "reviewedBy": "u1786490850917",
+        "timestamp": 1786901800000
+      },
+      "createdAt": 1786850000000
+    },
+    {
+      "id": "r_hist_003",
+      "fromUserId": "u1786490850917",
+      "toUserId": "u2",
+      "timeSlot": "이번 달 첫째 주 일요일 오전 9시",
+      "place": "한강공원 망원나들목",
+      "status": "completed",
+      "walkPhase": "ended",
+      "statusLog": [
+        {
+          "message": "5분 늦어요",
+          "by": "u2",
+          "timestamp": 1786500000000
+        },
+        {
+          "message": "도착했어요",
+          "by": "u1786490850917",
+          "timestamp": 1786500900000
+        }
+      ],
+      "review": {
+        "rating": 5,
+        "comment": "코코가 활발해서 장거리 산책하기 딱이었어요.",
+        "reviewedBy": "u1786490850917",
+        "timestamp": 1786505400000
+      },
+      "createdAt": 1786400000000
+    },
+    {
+      "id": "r_hist_004",
+      "fromUserId": "u1",
+      "toUserId": "u2",
+      "timeSlot": "지난달 금요일 오후 6시",
+      "place": "마포구민체육센터 앞",
+      "status": "completed",
+      "walkPhase": "ended",
+      "statusLog": [
+        {
+          "message": "도착했어요",
+          "by": "u1",
+          "timestamp": 1786000000000
+        }
+      ],
+      "review": {
+        "rating": 5,
+        "comment": "소형견끼리 호흡이 잘 맞았어요. 추천합니다!",
+        "reviewedBy": "u1",
+        "timestamp": 1786002400000
+      },
+      "createdAt": 1785900000000
+    },
+    {
+      "id": "r_hist_005",
+      "fromUserId": "u2",
+      "toUserId": "u3",
+      "timeSlot": "지난달 일요일 오전 8시",
+      "place": "월드컵공원 평화의공원",
+      "status": "completed",
+      "walkPhase": "ended",
+      "statusLog": [
+        {
+          "message": "도착했어요",
+          "by": "u3",
+          "timestamp": 1785600000000
+        }
+      ],
+      "review": {
+        "rating": 4,
+        "comment": "활동량이 비슷해서 오래 걸어도 지치지 않았어요.",
+        "reviewedBy": "u2",
+        "timestamp": 1785603600000
+      },
+      "createdAt": 1785500000000
+    },
+    {
+      "id": "r_hist_006",
+      "fromUserId": "u3",
+      "toUserId": "u1",
+      "fromPetId": "p3",
+      "toPetId": "p1",
+      "timeSlot": "지난주 월요일 오후 5시",
+      "place": "망원나들목 북쪽 산책로",
+      "status": "completed",
+      "walkPhase": "ended",
+      "statusLog": [
+        {
+          "message": "도착했어요",
+          "by": "u3",
+          "timestamp": 1787300000000
+        }
+      ],
+      "review": {
+        "rating": 1,
+        "comment": "약속 시간을 크게 어겨서 기다리느라 몽이가 지쳤어요.",
+        "reviewedBy": "u1",
+        "timestamp": 1787303600000
+      },
+      "createdAt": 1787250000000
+    },
+    {
+      "id": "r_hist_007",
+      "fromUserId": "u1",
+      "toUserId": "u3",
+      "fromPetId": "p1",
+      "toPetId": "p3",
+      "timeSlot": "이번 달 둘째 주 토요일 오전 11시",
+      "place": "월드컵공원 잔디광장",
+      "status": "completed",
+      "walkPhase": "ended",
+      "statusLog": [
+        {
+          "message": "도착했어요",
+          "by": "u1",
+          "timestamp": 1787400000000
+        }
+      ],
+      "review": {
+        "rating": 2,
+        "comment": "견종·크기 차이가 커서 산책 속도가 맞지 않았어요.",
+        "reviewedBy": "u1",
+        "timestamp": 1787403600000
+      },
+      "createdAt": 1787350000000
+    }
+  ],
+  "blocks": [],
+  "walks": []
+}

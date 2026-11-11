@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <meta name="theme-color" content="#ff8c42" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-title" content="산책메이트" />
+  <link rel="manifest" href="manifest.json" />
+  <title>산책메이트 - 산책 진행</title>
+  <link rel="stylesheet" href="css/common.css" />
+  <link rel="stylesheet" href="css/cancel-dialog.css" />
+  <link rel="stylesheet" href="css/walk.css" />
+</head>
+<body>
+  <div class="app_frame">
+    <header class="app_header">
+      <p class="header_title">산책 약속</p>
+    </header>
+
+    <main class="app_main">
+      <section class="card walk_summary" data-walk-summary>
+        <p>불러오는 중...</p>
+      </section>
+
+      <section class="card walk_status_section" data-walk-status-section hidden>
+        <p class="form_label">상태 전하기 (자유 채팅 대신 정해진 문구만 사용)</p>
+        <div class="button_row status_button_row">
+          <button type="button" class="btn_outline btn_small" data-status-message="5분 늦어요">5분 늦어요</button>
+          <button type="button" class="btn_outline btn_small" data-status-message="도착했어요">도착했어요</button>
+          <button type="button" class="btn_danger_outline btn_small" data-status-message="취소할게요">취소할게요</button>
+        </div>
+
+        <p class="form_label section_title">상태 기록</p>
+        <ul class="status_log_list" data-status-log></ul>
+      </section>
+
+      <section class="card walk_certify_section" data-certify-section hidden>
+        <p class="form_label" data-certify-label></p>
+        <button type="button" class="btn_primary walk_certify_button" data-certify-button></button>
+        <p class="form_error" data-certify-error hidden></p>
+
+        <div class="walk_certify_gallery" data-certify-gallery hidden>
+          <figure class="walk_certify_photo_item" data-certify-start-wrap hidden>
+            <figcaption class="walk_certify_photo_caption">시작 인증샷</figcaption>
+            <img class="walk_certify_photo" data-certify-start-image alt="산책 시작 인증 사진" />
+          </figure>
+          <figure class="walk_certify_photo_item" data-certify-end-wrap hidden>
+            <figcaption class="walk_certify_photo_caption">종료 인증샷</figcaption>
+            <img class="walk_certify_photo" data-certify-end-image alt="산책 종료 인증 사진" />
+          </figure>
+        </div>
+      </section>
+
+      <section class="card review_section" data-review-section hidden>
+        <p class="form_label">산책은 어땠나요? 후기를 남겨주세요</p>
+        <form data-review-form>
+          <div class="form_group rating_select_group" data-rating-group>
+            <button type="button" class="chip_select_option" data-rating="1">⭐1</button>
+            <button type="button" class="chip_select_option" data-rating="2">⭐2</button>
+            <button type="button" class="chip_select_option" data-rating="3">⭐3</button>
+            <button type="button" class="chip_select_option" data-rating="4">⭐4</button>
+            <button type="button" class="chip_select_option" data-rating="5">⭐5</button>
+          </div>
+          <div class="form_group">
+            <textarea class="form_textarea" name="comment" placeholder="함께한 산책은 어땠는지 간단히 남겨주세요 (선택)"></textarea>
+          </div>
+          <p class="form_error" data-review-error hidden></p>
+          <button type="submit" class="btn_primary">후기 남기고 완료하기</button>
+        </form>
+      </section>
+
+      <section class="card review_result_section" data-review-result hidden></section>
+
+      <div class="walk_bottom_actions">
+        <a class="walk_back_link" href="requests.html">← 요청 목록으로</a>
+      </div>
+    </main>
+  </div>
+
+  <script src="js/app-config.js"></script>
+  <script src="js/local-api.js"></script>
+  <script src="js/camera-helper.js"></script>
+  <script src="js/api.js"></script>
+  <script src="js/cancel-dialog.js"></script>
+  <script src="js/scroll-top.js"></script>
+  <script src="js/walk.js"></script>
+</body>
+</html>

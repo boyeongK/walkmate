@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <meta name="theme-color" content="#ff8c42" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-title" content="산책메이트" />
+  <link rel="manifest" href="manifest.json" />
+  <title>산책메이트 - 시작하기</title>
+  <link rel="stylesheet" href="css/common.css" />
+  <link rel="stylesheet" href="css/index.css" />
+</head>
+<body>
+  <div class="app_frame">
+    <main class="onboarding_main">
+      <div class="onboarding_logo">
+        <span class="onboarding_logo_icon" aria-hidden="true">🐾</span>
+        <h1 class="onboarding_title">산책메이트</h1>
+        <p class="onboarding_description">내 반려동물 프로필을 등록하고<br />산책 짝을 찾아보세요.</p>
+      </div>
+
+      <p class="onboarding_loading_text" data-onboarding-loading>이전 사용 정보 확인 중...</p>
+
+      <div class="onboarding_account_section" data-onboarding-panel hidden>
+        <section class="onboarding_block">
+          <h2 class="section_title">회원가입</h2>
+          <p class="form_helper">이름과 지역을 입력하면 새 계정이 만들어지고, 반려동물을 등록할 수 있어요.</p>
+
+          <form class="card new_account_form" data-new-account-form>
+            <div class="form_group">
+              <label class="form_label" for="new_account_name">이름</label>
+              <input class="form_input" type="text" id="new_account_name" name="name" placeholder="예: 홍길동" required autocomplete="name" />
+            </div>
+            <div class="form_group">
+              <label class="form_label" for="new_account_region">지역 (선택)</label>
+              <input class="form_input" type="text" id="new_account_region" name="region" placeholder="예: 서울 성동구" autocomplete="address-level2" />
+            </div>
+            <p class="form_error" data-new-account-error hidden></p>
+            <button type="submit" class="btn_primary">가입하고 반려동물 등록하기</button>
+          </form>
+        </section>
+
+        <section class="onboarding_block" data-device-accounts-section hidden>
+          <h2 class="section_title">이 기기에서 사용한 계정</h2>
+          <p class="form_helper">예전에 가입한 계정으로 다시 들어올 수 있어요.</p>
+          <ul class="account_select_list" data-device-account-list></ul>
+        </section>
+
+        <section class="onboarding_block" data-server-accounts-section hidden>
+          <h2 class="section_title">저장된 계정으로 로그인</h2>
+          <p class="form_helper">다른 PC에서 가입한 계정도 폴더 안 데이터(db.json)에 남아 있으면 여기서 선택할 수 있어요.</p>
+          <ul class="account_select_list" data-server-account-list></ul>
+        </section>
+
+        <details class="onboarding_demo_details">
+          <summary class="onboarding_demo_summary">데모 계정으로 빠르게 체험</summary>
+          <p class="form_helper">미리 만들어 둔 샘플 계정으로 기능만 둘러볼 수 있어요.</p>
+          <ul class="account_select_list" data-demo-account-list></ul>
+        </details>
+      </div>
+    </main>
+  </div>
+
+  <script src="js/app-config.js"></script>
+  <script src="js/local-api.js"></script>
+  <script src="js/account-store.js"></script>
+  <script src="js/api.js"></script>
+  <script src="js/scroll-top.js"></script>
+  <script src="js/index.js"></script>
+</body>
+</html>
